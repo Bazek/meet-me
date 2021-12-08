@@ -21,6 +21,18 @@ volumes:
 
 services:
 
+  meet-me-api:
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+    container_name: meet-me-api
+    ports:
+      - "2380:80"
+    volumes:
+      - ./api/app:/app
+    environment:
+      MONGODB_URL: "mongodb://root:example@meet-me-mongo/admin"
+
   meet-me-redis:
     image: redis:alpine
     container_name: meet-me-redis

@@ -1,0 +1,4 @@
+pydantic[email]
+pydantic-choices
+pydantic-mongo
+pymongo
